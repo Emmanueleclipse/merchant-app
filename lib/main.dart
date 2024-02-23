@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:app/app_controller.dart';
 import 'package:app/router.dart';
+import 'package_info_helper.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  PackageInfoPlusHelper.init();
   Authentication.checkForAuth().then((isAuthenticated) {
     AnyFluroRouter.setupRouter();
     runApp(Anypay(isAuthenticated));
